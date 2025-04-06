@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  jobmanager:
+    image: flink:latest
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    volumes:
+      - ${PROJECT_ROOT}/src/main/resources/data:/opt/flink/data
+      - ${PROJECT_ROOT}/target:/opt/flink/jars
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager        
+
+  taskmanager:
+    image: flink:latest
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    volumes:
+      - ${PROJECT_ROOT}/src/main/resources/data:/opt/flink/data
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 2
