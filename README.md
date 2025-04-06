@@ -7,6 +7,14 @@ Because of the development in Windows machine, I let it in the project the docke
 
 The sink can be seen in the terminal of the task manager!
 
+## Example of the Events
+![EventsGenerated](https://github.com/user-attachments/assets/2c39fbb2-37e0-4247-ba13-10a11fa6cb8e)
+
+## Example of the Aggregated Data:
+![AggregatedEvents](https://github.com/user-attachments/assets/e4ff6618-0f11-405c-a9d4-2ebd0578b071)
+
+
+
 ## Project Structure
 
 ```bash
